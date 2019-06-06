@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,24 +13,25 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
+	font-size: 62.5%;
+	font-family: 'Open Sans', sans-serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.3;
 }
 ol, ul {
 	list-style: none;
@@ -54,6 +55,149 @@ table {
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
+	max-width: 880px;
+	margin: 12px auto;
+	padding: 0 10px;
 }
 
+@bigfont: 5rem;
+
+@mediumfont: 3rem;
+
+@regularfont: 1.9rem;
+
+@smallfont: 1.6rem;
+
+@bold: 800;
+
+.pexbox () {
+	padding: 20px 0;
+
+	.list .item {
+		padding: 10px 0;
+
+		h4 {
+			padding-bottom: 3px;
+			font-weight: @bold;
+		}
+
+		p {
+			font-size: @smallfont;
+		}
+	}
+}
+
+.skibox () {
+	.list h4 {
+		padding: 10px 10px 10px 0;
+	}
+}
+
+.container {
+	h1 {
+		font-size: @bigfont;
+	}
+
+	h2 {
+		font-size: @mediumfont;
+	}
+
+	h3 {
+		font-size: @mediumfont;
+		padding-bottom: 20px;
+		font-weight: @bold;
+	}
+
+	p {
+		font-size: @regularfont;
+	}
+
+	h4 {
+		font-size: @regularfont;
+	}
+
+	header nav {
+		display: flex;
+		justify-content: flex-end;
+		padding-bottom: 12px;
+
+		a {
+			padding-left: 20px;
+			text-decoration: none;
+			color: gray;
+			font-size: @smallfont;
+		}
+	}
+
+	.top {
+		height: 100%;
+		background-color: peachpuff;
+		margin-bottom: 20px;
+		border-radius: 10px;
+		padding-bottom: 30px;
+
+		.name {
+			padding: 50px 0 30px 0;
+			text-align: center;
+
+			.me {
+				font-weight: @bold;
+			}
+		}
+
+		.contact {
+			text-align: center;
+			padding-bottom: 30px;
+		}
+
+		.summary {
+			padding: 0 40px;
+		}
+	}
+
+	.sidebyside {
+		display: flex;
+		padding-bottom: 60px;
+
+		.left {
+			width: 75%;
+			padding-left: 20px;
+
+			.projects {
+				.pexbox;
+			}
+
+			.experience {
+				.pexbox;
+			}
+
+			.education {
+				.pexbox;
+			}
+		}
+
+		.right {
+			padding: 20px;
+
+			.skills {
+				.skibox;
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.sidebyside {
+		flex-direction: column-reverse;
+	}
+
+	.sidebyside .right .skills .list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.sidebyside .left {
+		width: 100%;
+	}
+}
