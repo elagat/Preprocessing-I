@@ -1,3 +1,7 @@
+.Standardwm {
+  width: 800px;
+  margin: 20px auto;
+}
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -86,9 +90,8 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
+  font-size: 100%;
   font: inherit;
-  font-size: 62.5%;
-  font-family: 'Open Sans', sans-serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -106,7 +109,7 @@ section {
   display: block;
 }
 body {
-  line-height: 1.3;
+  line-height: 1;
 }
 ol,
 ul {
@@ -131,124 +134,166 @@ table {
 * {
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+  color: gray;
+}
 html,
 body {
-  height: 100%;
-  max-width: 880px;
-  margin: 12px auto;
-  padding: 0 10px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.3;
 }
-.container h1 {
+h1 {
   font-size: 5rem;
 }
-.container h2 {
-  font-size: 3rem;
+h2 {
+  font-size: 4rem;
+  line-height: 1.4;
 }
-.container h3 {
+h3 {
   font-size: 3rem;
-  padding-bottom: 20px;
   font-weight: 800;
 }
-.container p {
+h4 {
   font-size: 1.9rem;
+  font-weight: 800;
 }
-.container h4 {
-  font-size: 1.9rem;
+p {
+  font-size: 1.6rem;
+  line-height: 1.4;
 }
-.container header nav {
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 12px;
-}
-.container header nav a {
-  padding-left: 20px;
+a {
   text-decoration: none;
   color: gray;
   font-size: 1.6rem;
 }
-.container .top {
-  height: 100%;
-  background-color: #45b3e0;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  padding-bottom: 30px;
+a :hover {
+  color: #4d4d4d;
 }
-.container .top .name {
-  padding: 50px 0 30px 0;
-  text-align: center;
+.container {
+  max-width: 100vw;
+  margin: 0 auto;
 }
-.container .top .name .me {
-  font-weight: 800;
+.container header {
+  width: 800px;
+  margin: 15px auto;
 }
-.container .top .contact {
-  text-align: center;
-  padding-bottom: 30px;
-}
-.container .top .summary {
-  padding: 0 40px;
-}
-.container .sidebyside {
+.container header nav {
+  justify-content: center;
+  max-width: 630px;
+  margin: 0 auto;
   display: flex;
-  padding-bottom: 60px;
-}
-.container .sidebyside .left {
-  width: 75%;
-  padding-left: 20px;
-}
-.container .sidebyside .left .projects {
-  padding: 20px 0;
-}
-.container .sidebyside .left .projects .list .item {
-  padding: 10px 0;
-}
-.container .sidebyside .left .projects .list .item h4 {
-  padding-bottom: 3px;
-  font-weight: 800;
-}
-.container .sidebyside .left .projects .list .item p {
-  font-size: 1.6rem;
-}
-.container .sidebyside .left .experience {
-  padding: 20px 0;
-}
-.container .sidebyside .left .experience .list .item {
-  padding: 10px 0;
-}
-.container .sidebyside .left .experience .list .item h4 {
-  padding-bottom: 3px;
-  font-weight: 800;
-}
-.container .sidebyside .left .experience .list .item p {
-  font-size: 1.6rem;
-}
-.container .sidebyside .left .education {
-  padding: 20px 0;
-}
-.container .sidebyside .left .education .list .item {
-  padding: 10px 0;
-}
-.container .sidebyside .left .education .list .item h4 {
-  padding-bottom: 3px;
-  font-weight: 800;
-}
-.container .sidebyside .left .education .list .item p {
-  font-size: 1.6rem;
-}
-.container .sidebyside .right {
-  padding: 20px;
-}
-.container .sidebyside .right .skills .list h4 {
-  padding: 10px 10px 10px 0;
+  justify-content: space-between;
 }
 @media (max-width: 500px) {
-  .sidebyside {
-    flex-direction: column-reverse;
-  }
-  .sidebyside .right .skills .list {
+  .container header nav {
+    justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
   }
-  .sidebyside .left {
-    width: 100%;
-  }
+}
+.container .top {
+  max-width: 100vw;
+  height: 300px;
+  background: #8f6371;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .top .photo {
+  height: 200px;
+  width: 300px;
+}
+.container .top .photo img {
+  height: 100%;
+  width: 100%;
+}
+.container .top .name {
+  height: 200px;
+  width: 380px;
+  padding-top: 18px;
+  margin-left: 26px;
+}
+.container .top .name h3 {
+  font-weight: 400;
+}
+.container .sidebyside {
+  width: 800px;
+  margin: 45px auto;
+  display: flex;
+}
+.container .sidebyside .left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .sidebyside .left .projects {
+  margin-bottom: 35px;
+}
+.container .sidebyside .left .projects h3 {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .projects ul li {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .experience {
+  margin-bottom: 35px;
+}
+.container .sidebyside .left .experience h3 {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .experience ul li {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .education h3 {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .education ul li {
+  padding-bottom: 10px;
+}
+.container .sidebyside .right {
+  width: 30%;
+  height: 87%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 45px;
+}
+.container .sidebyside .right .skills {
+  margin-bottom: 23px;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 20px;
+}
+.container .sidebyside .right .skills h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.container .sidebyside .right .skills ul li {
+  padding-bottom: 15px;
+}
+.container .sidebyside .right .skills ul li h4 {
+  font-weight: 400;
+  text-align: center;
+}
+.container .sidebyside .right .interests {
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 20px;
+}
+.container .sidebyside .right .interests h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.container .sidebyside .right .interests ul li {
+  padding-bottom: 15px;
+}
+.container .sidebyside .right .interests ul h4 {
+  font-weight: 400;
+  text-align: center;
+}
+.container .sidebyside .right .awards ul li {
+  padding-bottom: 10px;
 }
